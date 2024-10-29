@@ -1,0 +1,12 @@
+apiVersion: kuadrant.io/v1beta2
+kind: RateLimitPolicy
+metadata:
+  creationTimestamp: null
+  name: petstore
+spec:
+  targetRef:
+    group: gateway.networking.k8s.io
+    kind: HTTPRoute
+    name: petstore
+status: {}
+
