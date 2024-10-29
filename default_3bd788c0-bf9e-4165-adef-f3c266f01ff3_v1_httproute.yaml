@@ -1,0 +1,32 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  creationTimestamp: null
+  name: petstore
+spec:
+  hostnames:
+  - example.com
+  rules:
+  - matches:
+    - method: GET
+      path:
+        type: Exact
+        value: /v1/cat
+  - matches:
+    - method: POST
+      path:
+        type: Exact
+        value: /v1/cat
+  - matches:
+    - method: GET
+      path:
+        type: Exact
+        value: /v1/dog
+  - matches:
+    - method: GET
+      path:
+        type: Exact
+        value: /v1/snake
+status:
+  parents: null
+
