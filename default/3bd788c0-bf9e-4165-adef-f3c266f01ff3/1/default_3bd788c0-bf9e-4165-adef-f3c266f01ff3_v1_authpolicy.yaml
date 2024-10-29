@@ -9,17 +9,17 @@ spec:
     - method: GET
       path:
         type: Exact
-        value: /v1/dog
-  - matches:
-    - method: GET
-      path:
-        type: Exact
         value: /v1/snake
   - matches:
     - method: POST
       path:
         type: Exact
         value: /v1/cat
+  - matches:
+    - method: GET
+      path:
+        type: Exact
+        value: /v1/dog
   rules:
     authentication:
       getDog_oidc:
