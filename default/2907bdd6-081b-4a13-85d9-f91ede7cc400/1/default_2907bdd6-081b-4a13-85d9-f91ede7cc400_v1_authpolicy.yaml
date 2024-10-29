@@ -6,6 +6,11 @@ metadata:
 spec:
   routeSelectors:
   - matches:
+    - method: GET
+      path:
+        type: Exact
+        value: /v1/snake
+  - matches:
     - method: POST
       path:
         type: Exact
@@ -15,11 +20,6 @@ spec:
       path:
         type: Exact
         value: /v1/dog
-  - matches:
-    - method: GET
-      path:
-        type: Exact
-        value: /v1/snake
   rules:
     authentication:
       getDog_oidc:
