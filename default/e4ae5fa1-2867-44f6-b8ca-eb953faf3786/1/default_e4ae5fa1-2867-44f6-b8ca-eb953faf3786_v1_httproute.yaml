@@ -3,7 +3,6 @@ kind: HTTPRoute
 metadata:
   creationTimestamp: null
   name: petstore
-  namespace: petstore
 spec:
   hostnames:
   - example.com

@@ -3,13 +3,11 @@ kind: AuthPolicy
 metadata:
   creationTimestamp: null
   name: petstore
-  namespace: petstore
 spec:
   rules: {}
   targetRef:
     group: gateway.networking.k8s.io
     kind: HTTPRoute
     name: petstore
-    namespace: petstore
 status: {}
 

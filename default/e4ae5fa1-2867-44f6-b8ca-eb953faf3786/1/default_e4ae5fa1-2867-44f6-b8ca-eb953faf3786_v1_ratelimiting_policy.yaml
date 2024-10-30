@@ -3,7 +3,6 @@ kind: RateLimitPolicy
 metadata:
   creationTimestamp: null
   name: petstore
-  namespace: petstore
 spec:
   limits:
     getCat:
@@ -36,6 +35,5 @@ spec:
     group: gateway.networking.k8s.io
     kind: HTTPRoute
     name: petstore
-    namespace: petstore
 status: {}
 
