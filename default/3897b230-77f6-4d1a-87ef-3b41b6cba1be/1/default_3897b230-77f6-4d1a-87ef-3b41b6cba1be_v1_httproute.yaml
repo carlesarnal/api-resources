@@ -1,0 +1,43 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  creationTimestamp: null
+  name: petstore
+  namespace: petstore
+spec:
+  hostnames:
+  - example.com
+  parentRefs:
+  - name: istio-ingressgateway
+    namespace: istio-system
+  rules:
+  - backendRefs:
+    - name: petstore
+      namespace: petstore
+      port: 80
+    matches:
+    - method: GET
+      path:
+        type: Exact
+        value: /api/v1/cat
+  - backendRefs:
+    - name: petstore
+      namespace: petstore
+      port: 80
+    matches:
+    - method: GET
+      path:
+        type: Exact
+        value: /api/v1/dog
+  - backendRefs:
+    - name: petstore
+      namespace: petstore
+      port: 80
+    matches:
+    - method: POST
+      path:
+        type: Exact
+        value: /api/v1/dog
+status:
+  parents: null
+
