@@ -5,10 +5,10 @@ metadata:
   name: petstore
 spec:
   hostnames:
-  - example.com
+  - api.petstore.com
   parentRefs:
-  - name: istio-ingressgateway
-    namespace: istio-system
+  - name: kuadrant-ingressgateway
+    namespace: gateway-system
   rules:
   - backendRefs:
     - name: petstore
@@ -22,7 +22,7 @@ spec:
     - name: petstore
       port: 80
     matches:
-    - method: POST
+    - method: GET
       path:
         type: Exact
         value: /api/v1/dog
@@ -30,7 +30,7 @@ spec:
     - name: petstore
       port: 80
     matches:
-    - method: GET
+    - method: POST
       path:
         type: Exact
         value: /api/v1/dog
