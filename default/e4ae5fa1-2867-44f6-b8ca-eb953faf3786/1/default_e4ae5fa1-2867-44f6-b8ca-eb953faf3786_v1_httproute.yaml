@@ -22,7 +22,7 @@ spec:
     - name: petstore
       port: 80
     matches:
-    - method: GET
+    - method: POST
       path:
         type: Exact
         value: /api/v1/dog
@@ -30,10 +30,7 @@ spec:
     - name: petstore
       port: 80
     matches:
-    - method: POST
+    - method: GET
       path:
         type: Exact
         value: /api/v1/dog
-status:
-  parents: null
-
