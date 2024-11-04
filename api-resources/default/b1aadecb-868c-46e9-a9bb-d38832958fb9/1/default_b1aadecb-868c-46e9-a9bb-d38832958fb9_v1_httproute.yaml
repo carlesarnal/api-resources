@@ -3,7 +3,6 @@ kind: HTTPRoute
 metadata:
   creationTimestamp: null
   name: petstore
-  namespace: petstore
 spec:
   hostnames:
   - api-controller.apicurio.integration-qe.com
@@ -11,14 +10,6 @@ spec:
   - name: istio-ingressgateway
     namespace: istio-system
   rules:
-  - backendRefs:
-    - name: petstore
-      port: 80
-    matches:
-    - method: GET
-      path:
-        type: Exact
-        value: /v1/cat
   - backendRefs:
     - name: petstore
       port: 80
@@ -35,3 +26,11 @@ spec:
       path:
         type: Exact
         value: /v1/dog
+  - backendRefs:
+    - name: petstore
+      port: 80
+    matches:
+    - method: GET
+      path:
+        type: Exact
+        value: /v1/cat
