@@ -7,16 +7,16 @@ spec:
   hostnames:
   - example.com
   parentRefs:
-  - name: petstore
-    namespace: petstore
+  - name: external
+    namespace: gateway-system
   rules:
   - matches:
-    - method: GET
+    - method: POST
       path:
         type: Exact
         value: /cat
   - matches:
-    - method: POST
+    - method: GET
       path:
         type: Exact
         value: /cat
