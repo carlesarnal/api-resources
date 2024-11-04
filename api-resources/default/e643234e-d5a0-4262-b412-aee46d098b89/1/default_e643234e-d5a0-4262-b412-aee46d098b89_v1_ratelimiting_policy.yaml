@@ -1,0 +1,37 @@
+apiVersion: kuadrant.io/v1beta2
+kind: RateLimitPolicy
+metadata:
+  creationTimestamp: null
+  name: petstore
+spec:
+  limits:
+    getCat:
+      counters:
+      - request.headers.x-forwarded-for
+      rates:
+      - duration: 10
+        limit: 1
+        unit: second
+      routeSelectors:
+      - matches:
+        - method: GET
+          path:
+            type: Exact
+            value: /v1/cat
+    getDog:
+      counters:
+      - request.headers.x-forwarded-for
+      rates:
+      - duration: 10
+        limit: 3
+        unit: second
+      routeSelectors:
+      - matches:
+        - method: GET
+          path:
+            type: Exact
+            value: /v1/dog
+  targetRef:
+    group: gateway.networking.k8s.io
+    kind: HTTPRoute
+    name: petstore
