@@ -13,7 +13,6 @@ spec:
   rules:
   - backendRefs:
     - name: petstore
-      namespace: petstore
       port: 80
     matches:
     - method: GET
@@ -22,7 +21,6 @@ spec:
         value: /v1/cat
   - backendRefs:
     - name: petstore
-      namespace: petstore
       port: 80
     matches:
     - method: GET
@@ -31,7 +29,6 @@ spec:
         value: /v1/dog
   - backendRefs:
     - name: petstore
-      namespace: petstore
       port: 80
     matches:
     - method: POST
