@@ -7,8 +7,8 @@ spec:
   hostnames:
   - example.com
   parentRefs:
-  - name: external
-    namespace: gateway-system
+  - name: petstore
+    namespace: petstore
   rules:
   - matches:
     - method: GET
