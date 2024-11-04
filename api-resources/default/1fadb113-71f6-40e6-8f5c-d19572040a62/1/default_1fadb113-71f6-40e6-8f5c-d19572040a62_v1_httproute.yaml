@@ -10,27 +10,23 @@ spec:
   - name: external
     namespace: gateway-system
   rules:
-  - backendRefs:
-    - name: petstore
-      port: 80
-    matches:
+  - matches:
     - method: GET
       path:
         type: Exact
-        value: /v1/dog
-  - backendRefs:
-    - name: petstore
-      port: 80
-    matches:
+        value: /cat
+  - matches:
     - method: POST
       path:
         type: Exact
-        value: /v1/dog
-  - backendRefs:
-    - name: petstore
-      port: 80
-    matches:
+        value: /cat
+  - matches:
     - method: GET
       path:
         type: Exact
-        value: /v1/cat
+        value: /dog
+  - matches:
+    - method: POST
+      path:
+        type: Exact
+        value: /dog
