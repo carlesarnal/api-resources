@@ -5,7 +5,7 @@ metadata:
   name: petstore
 spec:
   hostnames:
-  - petstore.com
+  - petstore.io
   parentRefs:
   - name: external
     namespace: gateway-system
@@ -18,7 +18,7 @@ spec:
     - method: GET
       path:
         type: Exact
-        value: /cat
+        value: /v1/cat
   - backendRefs:
     - name: petstore
       namespace: petstore
@@ -27,7 +27,7 @@ spec:
     - method: POST
       path:
         type: Exact
-        value: /cat
+        value: /v1/cat
   - backendRefs:
     - name: petstore
       namespace: petstore
@@ -36,7 +36,7 @@ spec:
     - method: GET
       path:
         type: Exact
-        value: /dog
+        value: /v1/dog
   - backendRefs:
     - name: petstore
       namespace: petstore
@@ -45,4 +45,4 @@ spec:
     - method: POST
       path:
         type: Exact
-        value: /dog
+        value: /v1/dog
