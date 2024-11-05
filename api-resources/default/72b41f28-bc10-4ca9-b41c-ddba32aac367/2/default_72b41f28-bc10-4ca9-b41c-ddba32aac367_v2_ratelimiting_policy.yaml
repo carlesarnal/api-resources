@@ -2,7 +2,7 @@ apiVersion: kuadrant.io/v1beta2
 kind: RateLimitPolicy
 metadata:
   creationTimestamp: null
-  name: petstore
+  name: petstorev2
 spec:
   limits:
     getCat:
@@ -30,4 +30,4 @@ spec:
   targetRef:
     group: gateway.networking.k8s.io
     kind: HTTPRoute
-    name: petstore
+    name: petstorev2

@@ -2,7 +2,7 @@ apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
   creationTimestamp: null
-  name: petstore
+  name: petstorev2
 spec:
   hostnames:
   - petstore.io
@@ -18,7 +18,7 @@ spec:
     - method: GET
       path:
         type: Exact
-        value: /v2/cat
+        value: /v2/dog
   - backendRefs:
     - name: petstore
       namespace: petstore
@@ -27,7 +27,7 @@ spec:
     - method: POST
       path:
         type: Exact
-        value: /v2/cat
+        value: /v2/dog
   - backendRefs:
     - name: petstore
       namespace: petstore
@@ -36,7 +36,7 @@ spec:
     - method: GET
       path:
         type: Exact
-        value: /v2/dog
+        value: /v2/cat
   - backendRefs:
     - name: petstore
       namespace: petstore
@@ -45,4 +45,4 @@ spec:
     - method: POST
       path:
         type: Exact
-        value: /v2/dog
+        value: /v2/cat
