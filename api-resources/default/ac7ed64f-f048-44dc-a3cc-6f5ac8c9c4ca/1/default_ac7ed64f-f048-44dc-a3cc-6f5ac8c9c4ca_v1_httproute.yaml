@@ -5,7 +5,7 @@ metadata:
   name: petstore
 spec:
   hostnames:
-  - petstore.io
+  - petstore.com
   parentRefs:
   - name: external
     namespace: gateway-system
