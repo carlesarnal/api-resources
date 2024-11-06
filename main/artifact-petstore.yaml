@@ -1,0 +1,8 @@
+$type: artifact-v0
+registryId: main
+groupId: foo
+id: petstore
+versions:
+  - id: 1
+    globalId: 1
+    contentFile: content-1.yaml
