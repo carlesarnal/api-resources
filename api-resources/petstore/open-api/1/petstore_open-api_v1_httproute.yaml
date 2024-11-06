@@ -1,0 +1,48 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  creationTimestamp: null
+  name: petstore
+spec:
+  hostnames:
+  - petstore.io
+  parentRefs:
+  - name: external
+    namespace: gateway-system
+  rules:
+  - backendRefs:
+    - name: petstore
+      namespace: petstore
+      port: 80
+    matches:
+    - method: GET
+      path:
+        type: Exact
+        value: /v1/dog
+  - backendRefs:
+    - name: petstore
+      namespace: petstore
+      port: 80
+    matches:
+    - method: POST
+      path:
+        type: Exact
+        value: /v1/dog
+  - backendRefs:
+    - name: petstore
+      namespace: petstore
+      port: 80
+    matches:
+    - method: GET
+      path:
+        type: Exact
+        value: /v1/cat
+  - backendRefs:
+    - name: petstore
+      namespace: petstore
+      port: 80
+    matches:
+    - method: POST
+      path:
+        type: Exact
+        value: /v1/cat
