@@ -6,3 +6,6 @@ versions:
   - id: 1
     globalId: 1
     contentFile: content-42.yaml
+  - id: 2
+    globalId: 2
+    contentFile: content-2.yaml

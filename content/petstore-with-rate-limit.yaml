@@ -1,0 +1,50 @@
+openapi: "3.0.3"
+info:
+  title: "Pet Store API"
+  version: "2.0.0"
+x-kuadrant:
+  route:
+    name: "petstorev2"
+    hostnames:
+      - petstore.io
+    parentRefs:
+      - name: external
+        namespace: gateway-system
+paths:
+  /v2/cat:
+    get:
+      operationId: "getCat"
+      responses:
+        405:
+          description: "invalid input"
+    post:
+      operationId: "postCat"
+      responses:
+        405:
+          description: "invalid input"
+    x-kuadrant: ## Operation level Kuadrant Extension
+      backendRefs:
+        - name: petstore
+          port: 80
+          namespace: petstore
+      rate_limit:
+        rates:
+          - limit: 1
+            duration: 10
+            unit: second
+  /v2/dog:
+    get:
+      operationId: "getDog"
+      responses:
+        405:
+          description: "invalid input"
+    post:
+      operationId: "postDog"
+      responses:
+        405:
+          description: "invalid input"
+    x-kuadrant: ## Operation level Kuadrant Extension
+      backendRefs:
+        - name: petstore
+          port: 80
+          namespace: petstore
