@@ -33,7 +33,7 @@ spec:
       namespace: petstore
       port: 80
     matches:
-    - method: POST
+    - method: GET
       path:
         type: Exact
         value: /v1/dog
@@ -42,7 +42,7 @@ spec:
       namespace: petstore
       port: 80
     matches:
-    - method: GET
+    - method: POST
       path:
         type: Exact
         value: /v1/dog
